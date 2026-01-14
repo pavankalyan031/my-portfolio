@@ -147,6 +147,19 @@ body::before {
     transition: var(--transition-medium);
 }
 
+.mobile-greeting {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
 #header.scrolled {
     box-shadow: var(--shadow-medium);
 }
@@ -1196,28 +1209,38 @@ body::before {
         gap: 2rem;
         text-align: center;
     }
-    
+
+    .mobile-greeting {
+        display: block;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .hero .hero-title {
+        display: none;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .timeline::before {
         left: 30px;
     }
-    
+
     .timeline-item {
         width: 100%;
         left: 0 !important;
         padding-left: 4rem !important;
         padding-right: 0 !important;
     }
-    
+
     .timeline-icon {
         left: 5px !important;
         right: auto !important;
@@ -1227,6 +1250,13 @@ body::before {
 @media (max-width: 768px) {
     :root {
         --section-padding: 3rem 0;
+    }
+
+    #header {
+        position: static;
+        background: rgba(10, 10, 10, 0.95);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
     }
 
     .nav-menu {
@@ -1252,6 +1282,23 @@ body::before {
         display: flex;
     }
 
+    .mobile-greeting {
+        display: block;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero .hero-title {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 2rem;
+    }
+
     .hero-buttons {
         justify-content: center;
     }
@@ -1261,24 +1308,24 @@ body::before {
         gap: 0.8rem;
         max-width: 400px;
     }
-    
+
     .skills-container {
         grid-template-columns: 1fr;
     }
-    
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .achievements-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-    
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         justify-content: center;
     }

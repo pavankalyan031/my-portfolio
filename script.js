@@ -490,3 +490,24 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Header Buttons Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const startTaskBtn = document.getElementById('start-task');
+    const revertChangesBtn = document.getElementById('revert-changes');
+
+    if (startTaskBtn) {
+        startTaskBtn.addEventListener('click', () => {
+            showNotification('Starting a new task! What would you like to work on?', 'success');
+            // Here you could open a modal or redirect to a task manager
+        });
+    }
+
+    if (revertChangesBtn) {
+        revertChangesBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to revert changes? This will reload the page.')) {
+                location.reload();
+            }
+        });
+    }
+});
